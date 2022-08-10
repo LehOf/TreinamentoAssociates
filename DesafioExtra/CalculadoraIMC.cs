@@ -28,7 +28,7 @@ namespace DesafioExtra
             {
                 classificacao = ($"Seu IMC é: {IMC.ToString("F2", CultureInfo.InvariantCulture)} SUA CLASSIFICAÇÃO: PESO NORMAL");
             }
-            else if(IMC > 25.0 && IMC <= 29.9)
+            else if (IMC > 25.0 && IMC <= 29.9)
             {
                 classificacao = ($"Seu IMC é: {IMC.ToString("F2", CultureInfo.InvariantCulture)} SUA CLASSIFICAÇÃO: ACIMA DO PESO (SOBREPESO)");
             }
@@ -36,18 +36,14 @@ namespace DesafioExtra
             {
                 classificacao = ($"Seu IMC é: {IMC.ToString("F2", CultureInfo.InvariantCulture)} SUA CLASSIFICAÇÃO: OBESIDADE I");
             }
-            else if(IMC > 35 && IMC <= 39.9)
+            else if (IMC > 35 && IMC <= 39.9)
             {
                 classificacao = ($"Seu IMC é: {IMC.ToString("F2", CultureInfo.InvariantCulture)} SUA CLASSIFICAÇÃO: OBESIDADE II");
             }
             else if (IMC > 40)
             {
-                classificacao = ($"Seu IMC é: {IMC.ToString("F2",CultureInfo.InvariantCulture)} SUA CLASSIFICAÇÃO OBESIDADE III");
+                classificacao = ($"Seu IMC é: {IMC.ToString("F2", CultureInfo.InvariantCulture)} SUA CLASSIFICAÇÃO OBESIDADE III");
             }
             return classificacao;
- 
         }
-
-
-    }
 }

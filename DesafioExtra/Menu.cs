@@ -27,7 +27,7 @@ namespace DesafioExtra
                 case 2:
                     Console.Write("Informe o raio: ");
                     double raio = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                    CalculadoraAreaCirculo calculoCirculo = new CalculadoraAreaCirculo(raio);
+                    Calculadora calculoCirculo = new Calculadora(raio);
                     AreaDoCirculo = calculoCirculo.AreaDoCirculo();
                     Console.WriteLine(AreaDoCirculo);
                     break;

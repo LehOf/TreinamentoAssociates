@@ -13,13 +13,11 @@ namespace DesafioExtra
             Raio = raio;
         }
 
-        public string AreaDoCirculo()
+        public double AreaDoCirculo(double raio)
         {
             double ValorFinal;
-            string Area = "";
             ValorFinal = PI * Math.Pow(Raio, 2);
-
-            return Area = ($"A area do circulo é: {ValorFinal.ToString("F2", CultureInfo.InvariantCulture)} cm²");
+            return ValorFinal;
         }
     }
 }
