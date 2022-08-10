@@ -12,6 +12,7 @@ namespace DesafioExtra
             string ClassificacaoDoIMC;
             string AreaDoCirculo;
             string RegraDeTres;
+
             switch (escolha)
             {
                 case 1:
