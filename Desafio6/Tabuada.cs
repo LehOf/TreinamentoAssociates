@@ -7,13 +7,13 @@ namespace Desafio6
     {
         public int N { get; set; }
 
-        public string Tabuada(int n)
+        public void CalculoTabuada(int N)
         {
-            string RetornoTabuada;
+
             for (int i=1; i<=10; i++)
             { 
-                double resultado = i * n;
-                return RetornoTabuada = ($"{i} X {n} = {resultado}");  
+                int resultado = i * N;
+                Console.WriteLine(($"{i} X {N} = {resultado}"));  
             }
            
         } 

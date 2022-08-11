@@ -8,6 +8,9 @@ namespace Desafio6
         {
             int N = int.Parse(Console.ReadLine());
 
+            Tabuada tabuada = new Tabuada();
+
+            tabuada.CalculoTabuada(N);
 
         }
     }
