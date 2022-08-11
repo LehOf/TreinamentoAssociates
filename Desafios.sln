@@ -31,7 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desafio_Tabuada", "Desafio_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio6", "Desafio6\Desafio6.csproj", "{6BC28586-7CB6-418E-9BF6-C8442674E38B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desafio_Salario", "Desafio_Salario", "{AFC0A327-9A03-48F3-BBCD-798A4F5EDEEB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desafio_Cardapio", "Desafio_Cardapio", "{AFC0A327-9A03-48F3-BBCD-798A4F5EDEEB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio7", "Desafio7\Desafio7.csproj", "{3FBFA9DA-3034-43B2-B7D8-4FCC65CEAC2E}"
 EndProject
