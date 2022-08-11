@@ -8,11 +8,16 @@ namespace DesafioExtra
         public double Peso { get; set; }
         public double Altura { get; set; }
 
+        public CalculadoraIMC()
+        {
+
+        }
         public CalculadoraIMC(double peso, double altura)
         {
             Peso = peso;
             Altura = altura;
         }
+
 
         public string IndiceDeMassaCorporal()
         {
@@ -46,4 +51,5 @@ namespace DesafioExtra
             }
             return classificacao;
         }
+    }
 }

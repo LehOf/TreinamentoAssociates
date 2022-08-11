@@ -10,26 +10,25 @@ namespace DesafioExtra
         public void CardapioDeCalculo(int escolha)
         {
             string ClassificacaoDoIMC;
-            string AreaDoCirculo;
             string RegraDeTres;
+            double calculo;
 
             switch (escolha)
             {
                 case 1:
+                    CalculadoraIMC calculoIMC = new CalculadoraIMC();
                     Console.Write("Informe seu peso: ");
-                    double peso = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    calculoIMC.Peso = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                     Console.Write("Informe sua altura: ");
-                    double altura = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                    CalculadoraIMC calculoIMC = new CalculadoraIMC(peso, altura);
-                    ClassificacaoDoIMC = calculoIMC.IndiceDeMassaCorporal();
-                    Console.WriteLine(ClassificacaoDoIMC);
+                    calculoIMC.Altura = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    calculoIMC.IndiceDeMassaCorporal();
                     break;
                 case 2:
                     Console.Write("Informe o raio: ");
                     double raio = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                    Calculadora calculoCirculo = new Calculadora(raio);
-                    AreaDoCirculo = calculoCirculo.AreaDoCirculo();
-                    Console.WriteLine(AreaDoCirculo);
+                    CalculadoraAreaCirculo calculoCirculo = new CalculadoraAreaCirculo(raio);
+                    calculo = calculoCirculo.AreaDoCirculo(raio);
+                    Console.WriteLine(calculo.ToString("F2",CultureInfo.InvariantCulture));
                     break;
                 case 3:
                     Console.Write("Informe o primeiro valor: ");

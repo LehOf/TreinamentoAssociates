@@ -14,7 +14,6 @@ namespace DesafioExtra
             int escolha = int.Parse(Console.ReadLine());
 
             Console.WriteLine("");
-
             Menu menuCardapio = new Menu();
             menuCardapio.CardapioDeCalculo(escolha);
         }
