@@ -9,7 +9,6 @@ namespace DesafioExtra
 
         public void CardapioDeCalculo(int escolha)
         {
-            string ClassificacaoDoIMC;
             string RegraDeTres;
             double calculo;
 
