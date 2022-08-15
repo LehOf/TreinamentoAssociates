@@ -21,7 +21,7 @@ namespace DesafioAluno
             var NotaGeografia = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
             Console.WriteLine("");
             Console.Write("ESCOLHA UMA OPÇÃO (M-MATEMATICA / P-PORTUGUES/ G-GEOGRAFIA): ");
-            var escolha = char.Parse(Console.ReadLine());
+            var escolha = char.Parse(Console.ReadLine().ToUpper());
             Console.WriteLine("");
 
             Aluno aluno = new Aluno(Nome, Endereco, Idade, NotaMatematica, NotaPortugues, NotaGeografia);

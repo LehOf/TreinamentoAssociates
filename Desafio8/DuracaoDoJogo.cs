@@ -4,28 +4,15 @@ namespace Desafio8
 {
     class DuracaoDoJogo
     {
-        public int HoraInicial { get; set; }
-        public int MinutoInicial { get; set; }
-        public int HoraFinal { get; set; }
-        public int MinutoFinal { get; set; }
         public int Tempo { get; set; }
-
-        public DuracaoDoJogo(int horaInicial, int minutoIncial, int horaFinal, int minutoFinal)
-        {
-            HoraInicial = horaInicial;
-            MinutoInicial = minutoIncial;
-            HoraFinal = horaFinal;
-            MinutoFinal = minutoFinal;
-        }
-
-        public int TotalDeMinutosDoJogo()
+        public int TotalDeMinutosDoJogo(int horaInicial, int minutoInicial, int horaFinal, int minutoFinal)
         {
             var minutosTotais = 0;
 
-            MinutoInicial += HoraInicial * 60;
-            MinutoFinal += HoraFinal * 60;
+            minutoInicial += horaInicial * 60;
+            minutoFinal += horaFinal * 60;
 
-            Tempo = MinutoFinal - MinutoInicial;
+            Tempo = minutoFinal - minutoInicial;
 
             if (Tempo <= 0)
             {
@@ -33,7 +20,6 @@ namespace Desafio8
             }
 
             return minutosTotais = Tempo % 60;
-
         }
 
         public int TotalDeHorasDoJogo()
@@ -42,11 +28,5 @@ namespace Desafio8
 
             return horasTotais = Tempo / 60;
         }
-
-        public override string ToString()
-        {
-            return ($"O JOGO DUROU {TotalDeHorasDoJogo()} HORA(S) E {TotalDeMinutosDoJogo()} MINUTO(S)");
-        }
-       
     }
 }

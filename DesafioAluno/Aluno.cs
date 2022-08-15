@@ -36,20 +36,23 @@ namespace DesafioAluno
         public string ImprimirNotas(char materia)
         {
             var entidade = "";
-
-            if (materia == 'G' || materia == 'g')
+            switch (materia)
             {
-                entidade = $"Nome: {Nome} \nEndereço: {Endereco} \nIdade: {Idade} \nNota de geografia: {NotaGeografia.ToString("F1",CultureInfo.InvariantCulture)}";
-            }
-            else if (materia == 'M' || materia == 'm')
-            {
-                entidade = $"Nome: {Nome} \nEndereço: {Endereco} \nIdade: {Idade} \nNota de matematica: {NotaMatematica.ToString("F1", CultureInfo.InvariantCulture)}";
-            }
-            else if (materia == 'P' || materia == 'p')
-            {
-                entidade = $"Nome: {Nome} \nEndereço: {Endereco} \nIdade: {Idade} \nNota de portugues {NotaPortugues.ToString("F1", CultureInfo.InvariantCulture)}";
+                case 'G':
+                    entidade = $"Nome: {Nome} \nEndereço: {Endereco} \nIdade: {Idade} \nNota de geografia: {NotaGeografia.ToString("F1", CultureInfo.InvariantCulture)}";
+                    break;
+                case 'M':
+                    entidade = $"Nome: {Nome} \nEndereço: {Endereco} \nIdade: {Idade} \nNota de matematica: {NotaMatematica.ToString("F1", CultureInfo.InvariantCulture)}";
+                    break;
+                case 'P':
+                    entidade = $"Nome: {Nome} \nEndereço: {Endereco} \nIdade: {Idade} \nNota de portugues {NotaPortugues.ToString("F1", CultureInfo.InvariantCulture)}";
+                    break;
+                default:
+                    Console.WriteLine("ESCOLHA UMA OPÇÃO VÁLIDA: ");
+                    break;
             }
             return entidade;
         }
     }
 }
+
