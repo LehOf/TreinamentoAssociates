@@ -39,6 +39,10 @@ namespace Desafio11
                 valorImposto = (salario - 4500) * 0.28 + (1500 * 0.18) + (1000 * 0.08);
                 retornoImposto = ($"R$ {valorImposto.ToString("F2", CultureInfo.InvariantCulture)}");
             }
+            else
+            {
+                throw new Exception();
+            }
             return retornoImposto;
         }
     }
