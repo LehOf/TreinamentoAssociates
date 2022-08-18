@@ -16,48 +16,66 @@ namespace Desafio10
             _TerceiraClassificacao = _terceiraClassificacao;
         }
 
-        public string EspecieDosVertebrados()
+        public string EspecieVertebradosInvertebrados(string _primeiraEspecie)
         {
-            if (_PrimeiraClassificacao == "vertebrado" && _SegundaClassificacao == "ave" && _TerceiraClassificacao == "carnivoro")
+            if (_primeiraEspecie == "vertebrado")
             {
-                _ClassificacaoResultante = "aguia";
+                if (_SegundaClassificacao == "ave")
+                {
+                    if (_TerceiraClassificacao == "carnivoro")
+                    {
+                        _ClassificacaoResultante = "aguia";
+                    }
+                    else if (_TerceiraClassificacao == "onivoro")
+                    {
+                        _ClassificacaoResultante = "homem";
+                    }
+                }
+                else if (_SegundaClassificacao == "mamifero")
+                {
+                    if (_TerceiraClassificacao == "onivoro")
+                    {
+                        _ClassificacaoResultante = "homem";
+                    }
+                    else if (_TerceiraClassificacao == "herbivaro")
+                    {
+                        _ClassificacaoResultante = "vaca";
+                    }
+                }
             }
-            else if (_PrimeiraClassificacao == "vertebrado" && _SegundaClassificacao == "ave" && _TerceiraClassificacao == "onivoro")
+            else if (_primeiraEspecie == "invertebrado")
             {
-                _ClassificacaoResultante = "pomba";
+                if (_SegundaClassificacao == "inseto")
+                {
+                    if (_TerceiraClassificacao == "hematofago")
+                    {
+                        _ClassificacaoResultante = "pulga";
+                    }
+                    else if (_TerceiraClassificacao == "herbivaro")
+                    {
+                        _ClassificacaoResultante = "lagarta";
+                    }
+                }
+                else if (_SegundaClassificacao == "anelideo")
+                {
+                    if (_TerceiraClassificacao == "hematofago")
+                    {
+                        _ClassificacaoResultante = "sanguessuga";
+                    }
+                    else if (_TerceiraClassificacao == "onivoro")
+                    {
+                        _ClassificacaoResultante = "minhoca";
+                    }
+                }
             }
-            else if (_PrimeiraClassificacao == "vertebrado" && _SegundaClassificacao == "mamifero" && _TerceiraClassificacao == "onivoro")
-            {
-                _ClassificacaoResultante = "homem";
-            }
-            else if (_PrimeiraClassificacao == "vertebrado" && _SegundaClassificacao == "mamifero" && _TerceiraClassificacao == "herbivoro")
-            {
-                _ClassificacaoResultante = "vaca";
-            }
-
             return _ClassificacaoResultante;
-
         }
-        public string EspeciesDosInvertebrados()
-        {
-            if (_PrimeiraClassificacao == "invertebrado" && _SegundaClassificacao == "inseto" && _TerceiraClassificacao == "hematofago")
-            {
-                _ClassificacaoResultante = "pulga";
-            }
-            else if (_PrimeiraClassificacao == "invertebrado" && _SegundaClassificacao == "inseto" && _TerceiraClassificacao == "herbivaro")
-            {
-                _ClassificacaoResultante = "lagarta";
-            }
-            else if (_PrimeiraClassificacao == "invertebrado" && _SegundaClassificacao == "anelideo" && _TerceiraClassificacao == "hematofago")
-            {
-                _ClassificacaoResultante = "sanguessuga";
-            }
-            else if (_PrimeiraClassificacao == "invertebrado" && _SegundaClassificacao == "anelideo" && _TerceiraClassificacao == "onivoro")
-            {
-                _ClassificacaoResultante = "minhoca";
-            }
 
-            return _ClassificacaoResultante;
+        public override string ToString()
+        {
+            return ($"{EspecieVertebradosInvertebrados(_PrimeiraClassificacao)}");
         }
     }
+
+   
 }

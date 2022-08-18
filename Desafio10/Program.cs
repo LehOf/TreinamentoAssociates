@@ -6,7 +6,7 @@ namespace Desafio10
     {
         static void Main(string[] args)
         {
-            var especieFinal = "";
+            
 
             Console.Write("Digite a primeira especie: ");
             string _primeiraEspecie = Console.ReadLine().ToLower();
@@ -17,17 +17,12 @@ namespace Desafio10
             Console.WriteLine("");
 
             ReinoAnimal especie = new ReinoAnimal(_primeiraEspecie, _segundaEspecie, _terceiraEspecie);
+  
+            var especieFinal = especie.EspecieVertebradosInvertebrados(_primeiraEspecie);
 
-            if (_primeiraEspecie == "vertebrado")
-            {
-                especieFinal = especie.EspecieDosVertebrados();
-            }
-            else if (_primeiraEspecie == "invertebrado")
-            {
-                especieFinal = especie.EspeciesDosInvertebrados();
-            }
+            Console.WriteLine($"{especie}");
 
-            Console.WriteLine($"{especieFinal}");
+            
         }
     }
 }
