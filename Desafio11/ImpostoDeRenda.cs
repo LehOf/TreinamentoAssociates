@@ -40,18 +40,8 @@ namespace Desafio11
 
         public override string ToString()
         {
-            var RetornoImposto = "";
-            if(CalculovalorImposto(_salario) == 0.0)
-            {
-                RetornoImposto = ($"Isento");
-            }
-            else if(CalculovalorImposto(_salario) != 0)
-            {
-                RetornoImposto = ($"R$ {CalculovalorImposto(_salario).ToString("F2", CultureInfo.InvariantCulture)}");
-            }
-
-            return ($"{RetornoImposto}");
-      
+            var RetornoImposto = CalculovalorImposto(_salario) == 0.0 ? "Isento" : $"R$ {CalculovalorImposto(_salario).ToString("F2", CultureInfo.InvariantCulture)}";
+            return RetornoImposto;  
         }
     }
 }
