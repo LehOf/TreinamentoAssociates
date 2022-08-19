@@ -5,45 +5,53 @@ namespace Desafio11
 {
     class ImpostoDeRenda
     {
-        private double _Salario { get; set; }
+        private double _salario { get; set; }
 
         public ImpostoDeRenda(double salario)
         {
-            _Salario = salario;
+            _salario = salario;
         }
 
-        public string CalculovalorImposto(double salario)
+        public double CalculovalorImposto(double salario)
         {
             var valorImposto = 0.0;
-            var retornoImposto = "";
             var primeiraFaixaSalarial = new[] { 0.0, 2000.00 };
             var segundaFaixaSalarial = new[] { 2000.01, 3000.00 };
             var terceiraFaixaSalarial = new[] { 3000.01, 4500.00 };
 
             if (salario > primeiraFaixaSalarial[0] && salario <= primeiraFaixaSalarial[1])
             {
-                retornoImposto = ($"Isento");
+                valorImposto = 0.0;
             }
             else if (salario > segundaFaixaSalarial[0] && salario <= segundaFaixaSalarial[1])
             {
                 valorImposto = (salario - 2000) * 0.08;
-                retornoImposto = ($"R$ {valorImposto.ToString("F2", CultureInfo.InvariantCulture)}");
             }
             else if (salario > terceiraFaixaSalarial[0] && salario <= terceiraFaixaSalarial[1])
             {
                 valorImposto = (salario - 3000) * 0.18 + (1000 * 0.08);
-                retornoImposto = ($"R$ {valorImposto.ToString("F2", CultureInfo.InvariantCulture)}");
             }
             else if (salario > terceiraFaixaSalarial[1])
             {
                 valorImposto = (salario - 4500) * 0.28 + (1500 * 0.18) + (1000 * 0.08);
-                retornoImposto = ($"R$ {valorImposto.ToString("F2", CultureInfo.InvariantCulture)}");
             }
-            else
+            return valorImposto;
+        }
+
+        public override string ToString()
+        {
+            var RetornoImposto = "";
+            if(CalculovalorImposto(_salario) == 0.0)
             {
-                throw new Exception();
+                RetornoImposto = ($"Isento");
             }
-            return retornoImposto;
+            else if(CalculovalorImposto(_salario) != 0)
+            {
+                RetornoImposto = ($"R$ {CalculovalorImposto(_salario).ToString("F2", CultureInfo.InvariantCulture)}");
+            }
+
+            return ($"{RetornoImposto}");
+      
         }
     }
 }

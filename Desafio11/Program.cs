@@ -12,7 +12,10 @@ namespace Desafio11
 
             ImpostoDeRenda imposto = new ImpostoDeRenda(salario);
 
-            Console.WriteLine($"{imposto.CalculovalorImposto(salario)}");
+            imposto.CalculovalorImposto(salario);
+
+            Console.WriteLine($"{imposto}");
+
         }
     }
 }
