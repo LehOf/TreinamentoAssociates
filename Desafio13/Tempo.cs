@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Desafio13
 {
@@ -13,13 +14,25 @@ namespace Desafio13
 
         public void ConversaoDoTempo()
         {
-            var horas = _tempo / 3600;
-            _tempo = _tempo % 3600;
+            List<int> lista = new List<int>();
+            lista.Add(3600);
+            lista.Add(60);
 
-            var minutos = _tempo / 60;
-            _tempo = _tempo % 60;
+            var horas = 0;
+            var minutos = 0;
+            var segundos = 0;
 
-            var segundos = _tempo;
+
+            for(int i=0; i<1; i++)
+            {
+                horas = _tempo / lista[0];
+                _tempo = _tempo % lista[0];
+
+                minutos = _tempo / lista[1];
+                _tempo = _tempo % lista[1];
+
+                segundos = _tempo;              
+            }
 
             Console.WriteLine($"{horas} : {minutos} : {segundos} ");
         }
