@@ -38,9 +38,7 @@ namespace Desafio14
                 else
                 {
                     break;
-
                 }
-
                 Console.WriteLine(quadrante);
             }
         }
