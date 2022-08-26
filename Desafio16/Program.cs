@@ -13,9 +13,8 @@ namespace Desafio16
             var quantidadeCanos = int.Parse(AlturaQuantidade[1]);
 
             Sapo sapo = new Sapo(alturaSapo, quantidadeCanos);
-
-           
-            Console.WriteLine(sapo.Calcular());
+  
+            Console.WriteLine(sapo.CalcularPuloSapo());
 
         }
     }

@@ -14,7 +14,7 @@ namespace Desafio16
             _quantidadesCanos = quantidadesCanos;
         }
 
-        public string Calcular()
+        public string CalcularPuloSapo()
         {
             int valor = 0, subtracao = 0;
 
@@ -30,21 +30,14 @@ namespace Desafio16
 
             for (int i = 1; i < _quantidadesCanos; i++)
             {
-                if (_alturaCanos[i] > _alturaCanos[i - 1])
-                {
-
-                    subtracao = (_alturaCanos[i] - _alturaCanos[i - 1]);
-                }
-                else
-                {
-                    subtracao = (_alturaCanos[i - 1] - _alturaCanos[i]);
-                }
+                _ = _alturaCanos[i] > _alturaCanos[i - 1] ? subtracao = (_alturaCanos[i] - _alturaCanos[i-1]) : subtracao = (_alturaCanos[i-1] - _alturaCanos[i]);
             }
 
             if (subtracao <= _alturaSapo)
             {
                 valor++;
             }
+
             return (valor == _alturaSapo - 1) ? "GAME OVER" : "YOU WIN";
         }
     }
