@@ -16,12 +16,10 @@ namespace Desafio17
         public string AtrasoBino()
         {
             var resultado = "";
-            var minutos = 0;
-            var horas = 0;
 
             TimeSpan atraso, HorarioChegada, HorarioSaida, DuracaoMaxima, DuracaoMinima, HorarioLimiteMenor, HorarioLimiteMaior;
 
-            atraso = new TimeSpan(0, 0, 0);
+            _ = new TimeSpan(0, 0, 0);
             HorarioChegada = new TimeSpan(8, 0, 0);
             HorarioSaida = new TimeSpan(_hora, _minuto, 0);
             DuracaoMaxima = new TimeSpan(1, 0, 0);
@@ -35,7 +33,7 @@ namespace Desafio17
                 {
                     atraso = HorarioSaida + (DuracaoMaxima);
                     atraso = atraso - HorarioChegada;
-                    minutos = (int)atraso.TotalMinutes;
+                    var minutos = (int)atraso.TotalMinutes;
                     resultado = $"Atraso maximo: {minutos} minutos";
                 }
                 else if (HorarioSaida + (DuracaoMinima) < HorarioChegada)
