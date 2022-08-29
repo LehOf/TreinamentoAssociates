@@ -16,29 +16,63 @@ namespace Desafio16
 
         public string CalcularPuloSapo()
         {
-            int valor = 0, subtracao = 0;
+            var resultado = "";
+            int valor, resposta = 0;
+            int[] anterior = new int[_quantidadesCanos];
 
-            Console.Write("Digite as alturas dos canos: ");
-            string[] EntradaAlturaDosCanos = Console.ReadLine().Split(' ');
+            _quantidadesCanos--;
 
-            _alturaCanos = new int[_quantidadesCanos];
+            Console.Write("DIGITE AS ALTURAS DOS CANOS:  ");
+            string[] valordaaltura = Console.ReadLine().Split(' ');
+            for (int i = 0; i <= _quantidadesCanos; i++)
+            {
+                anterior[i] = int.Parse(valordaaltura[i]);
+              
+
+            }
 
             for (int i = 0; i < _quantidadesCanos; i++)
             {
-                _alturaCanos[i] = int.Parse(EntradaAlturaDosCanos[i]);
+                if ((anterior[i + 1] - anterior[i]) > _alturaSapo)
+                {
+                    resposta = 1;
+                    break;
+                }
             }
 
-            for (int i = 1; i < _quantidadesCanos; i++)
-            {
-                _ = _alturaCanos[i] > _alturaCanos[i - 1] ? subtracao = (_alturaCanos[i] - _alturaCanos[i-1]) : subtracao = (_alturaCanos[i-1] - _alturaCanos[i]);
-            }
 
-            if (subtracao <= _alturaSapo)
-            {
-                valor++;
-            }
 
-            return (valor == _alturaSapo - 1) ? "GAME OVER" : "YOU WIN";
+
+            return resposta != 0 ? resultado = "GAME OVER\n" : resultado = "YOU WIN\n";
+                
         }
+
     }
 }
+            
+
+
+    //int valor = 0, subtracao = 0;
+
+    //Console.Write("Digite as alturas dos canos: ");
+    //string[] EntradaAlturaDosCanos = Console.ReadLine().Split(' ');
+
+    //_alturaCanos = new int[_quantidadesCanos];
+
+    //for (int i = 0; i < _quantidadesCanos; i++)
+    //{
+    //    _alturaCanos[i] = int.Parse(EntradaAlturaDosCanos[i]);
+    //}
+
+    //for (int i = 1; i < _quantidadesCanos; i++)
+    //{
+    //    _ = _alturaCanos[i] > _alturaCanos[i + 1] ? subtracao = (_alturaCanos[i] - _alturaCanos[i - 1]) : subtracao = (_alturaCanos[i + 1] - _alturaCanos[i]);
+    //}
+
+    //if (subtracao <= _alturaSapo)
+    //{
+    //    valor++;
+    //}
+    //return ( == _alturaSapo - 1) ? "GAME OVER" : "YOU WIN";
+
+
