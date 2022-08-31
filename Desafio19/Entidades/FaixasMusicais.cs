@@ -2,18 +2,18 @@
 
 namespace Desafio19
 {
-    class FaixasMusicais
+    public static class FaixasMusicais
     {
-        public string faixaZero = "PROXYCITY";
-        public string faixaUm = "P.Y.N.G.";
-        public string faixaDois = "DNSUEY!";
-        public string faixaTres = "SERVERS";
-        public string faixaQuatro = "HOST! ";
-        public string faixaCinco = "CRIPTONIZE ";
-        public string faixaSeis = "OFFLINE DAY";
-        public string faixaSete = "SALT";
-        public string faixaOito = "ANSWER!";
-        public string faixaNove = "RAR? ";
-        public string faixaDez = "WIFI ANTENNAS";
+        public const string FaixaZero = "PROXYCITY";
+        public const string FaixaUm = "P.Y.N.G.";
+        public const string FaixaDois = "DNSUEY!";
+        public const string FaixaTres = "SERVERS";
+        public const string FaixaQuatro = "HOST! ";
+        public const string FaixaCinco = "CRIPTONIZE ";
+        public const string FaixaSeis = "OFFLINE DAY";
+        public const string FaixaSete = "SALT";
+        public const string FaixaOito = "ANSWER!";
+        public const string FaixaNove = "RAR? ";
+        public const string FaixaDez = "WIFI ANTENNAS";
     }
 }

@@ -9,11 +9,18 @@ namespace Desafio19
             try
             {
                 Console.Write("ENTRE COM O NÚMERO DE MUSICAS A SEREM TOCADAS: ");
-                var NumeroDejogadas = int.Parse(Console.ReadLine());
+                var numeroDejogadas = int.Parse(Console.ReadLine());
+                var contador = 0;
 
-                Musica musica = new Musica(NumeroDejogadas);
-                musica.EscolhaDaMusica();
-                Console.WriteLine(musica.MusicaEscolhida());
+                var musica = new Musica(numeroDejogadas);
+
+                do
+                {
+                    Console.WriteLine(musica.MusicasMaisTocadas());
+                    contador++;
+
+                } while (contador < numeroDejogadas);
+
             }
             catch(EscolhaException e)
             {
