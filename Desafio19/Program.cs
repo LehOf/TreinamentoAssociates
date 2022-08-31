@@ -13,12 +13,12 @@ namespace Desafio19
 
                 Musica musica = new Musica(NumeroDejogadas);
                 musica.EscolhaDaMusica();
+                Console.WriteLine(musica.MusicaEscolhida());
             }
             catch(EscolhaException e)
             {
                 Console.WriteLine("ERRO NA ESCOLHA DA FAIXA: " + e.Message);
-            }
-         
+            }          
         }
     }
 }
