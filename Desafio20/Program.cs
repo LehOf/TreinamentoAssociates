@@ -12,7 +12,7 @@ namespace Desafio20
 
             var arquivo = new Arquivo(SourcePath);
 
-           arquivo.LendoArquivo();
+           arquivo.ImprimirNoConsole();
 
         }
     }

@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Desafio20
 {
-    class Arquivo
+    class Arquivo : IImpressaoInterface
     {
         private string _caminhoDoArquivo { get; set; }
 
@@ -12,29 +12,37 @@ namespace Desafio20
             _caminhoDoArquivo = caminho;
         }
 
-        public void LendoArquivo()
+        public string LendoArquivo()
         {
-            try
+            using (StreamReader sr = File.OpenText(_caminhoDoArquivo))
             {
-                using (StreamReader sr = File.OpenText(_caminhoDoArquivo))
+                while (!sr.EndOfStream)
                 {
-                    while (!sr.EndOfStream)
-                    {
-                       var line = sr.ReadLine();
-
-                    }
+                    return sr.ReadLine();
                 }
             }
-            catch (IOException e)
-            {
-                Console.WriteLine("An error occurred");
-                Console.WriteLine(e.Message);
-            }
+
+            return "";
         }
 
-        public void RetornandoTresNovosArquivos()
+        public void ConverterDatas()
         {
+            var data = DateTime.Parse(LendoArquivo());
 
+            var Date = data.Date.ToString("MM/dd/yyyy");
+            var DateFormaDois = data.ToString("yyyy/MM/dd");
+            var DateFormatoTres = data.ToString("dd-MM-yyyy");
+
+            Console.WriteLine($"{Date} \n{DateFormaDois} \n{DateFormatoTres}");
+        }
+
+        public void ImprimirNoConsole()
+        {
+            ConverterDatas();
+        }
+
+        public void ImprimirNoArquivo()
+        {
 
         }
     }
