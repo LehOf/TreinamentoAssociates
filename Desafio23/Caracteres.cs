@@ -16,7 +16,6 @@ namespace Desafio23
         public void ContarCaracterPalavra()
         {
             var valor = "";
-
             do
             {
                 foreach (var frase in _frases)
@@ -26,13 +25,13 @@ namespace Desafio23
                         _maior = frase.Length;
                         _palavra = frase;
                     }
-
                     valor += $"{frase.Length}-";
                 }
-                Console.WriteLine(valor.Remove(valor.LastIndexOf("-"), 1));
+                Console.WriteLine(valor = valor.Remove(valor.LastIndexOf("-"), 1));
 
                 Console.WriteLine("\nDIGITE UMA FRASE: ");
                 _frases = Console.ReadLine().Split(' ');
+                valor = "";
 
             } while (_frases[0] != "0");
         }
@@ -43,7 +42,7 @@ namespace Desafio23
             {
                 if (_frases[0] != "0")
                 {
-                   var caracter = _frases[i].Length;
+                    var caracter = _frases[i].Length;
 
                     if (caracter < _maior)
                     {
@@ -51,7 +50,7 @@ namespace Desafio23
                         _palavra = _palavra;
                     }
                     else if (caracter > _maior)
-                    { 
+                    {
                         _maior = caracter;
                         _palavra = _frases[i];
                     }
