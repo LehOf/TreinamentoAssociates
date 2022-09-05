@@ -3,47 +3,40 @@ using System.IO;
 
 namespace Desafio20
 {
-    class Arquivo : IImpressaoInterface
+    class Arquivo
     {
-        private string _caminhoDoArquivo { get; set; }
+        public string FormatoDeDataUm { get; set; }
+        public string FormatoDeDataDois { get; set; }
+        public string FormatoDeDataTres { get; set; }
 
-        public Arquivo(string caminho)
+
+        public void LendoArquivo(string caminho)
         {
-            _caminhoDoArquivo = caminho;
+            var fluxoDeArquivo = new FileStream(caminho, FileMode.Open);
+            var leitorDeFluxo = new StreamReader(fluxoDeArquivo);
+            var Linha = leitorDeFluxo.ReadLine();
+            var dataOriginal = DateTime.Parse(Linha);
+
+            FormatoDeDataUm = dataOriginal.ToString("MM/dd/yy");
+            FormatoDeDataDois = dataOriginal.ToString("yy/MM/dd");
+            FormatoDeDataTres = dataOriginal.ToString("dd-MM-yy");
         }
-
-        public string LendoArquivo()
+        public void CriandoNovosArquivos()
         {
-            using (StreamReader sr = File.OpenText(_caminhoDoArquivo))
-            {
-                while (!sr.EndOfStream)
-                {
-                    return sr.ReadLine();
-                }
-            }
+            var segundoCaminho = @"C:\Users\017567631\source\repos\TreinamentoAssociates\Desafio20\CaminhoDeOrigem2.txt";
+            var terceiroCaminho = @"C:\Users\017567631\source\repos\TreinamentoAssociates\Desafio20\CaminhoDeOrigem3.txt";
+            var quartoCaminho = @"C:\Users\017567631\source\repos\TreinamentoAssociates\Desafio20\CaminhoDeOrigem4.txt";
 
-            return "";
-        }
 
-        public void ConverterDatas()
-        {
-            var data = DateTime.Parse(LendoArquivo());
-
-            var Date = data.Date.ToString("MM/dd/yyyy");
-            var DateFormaDois = data.ToString("yyyy/MM/dd");
-            var DateFormatoTres = data.ToString("dd-MM-yyyy");
-
-            Console.WriteLine($"{Date} \n{DateFormaDois} \n{DateFormatoTres}");
-        }
-
-        public void ImprimirNoConsole()
-        {
-            ConverterDatas();
-        }
-
-        public void ImprimirNoArquivo()
-        {
-
+            var arquivoUm = new StreamWriter(segundoCaminho);
+            arquivoUm.WriteLine(FormatoDeDataUm.ToString());
+            arquivoUm.Close();
+            var arquivoDois = new StreamWriter(terceiroCaminho);
+            arquivoDois.WriteLine(FormatoDeDataDois.ToString());
+            arquivoDois.Close();
+            var arquivoTres = new StreamWriter(quartoCaminho);
+            arquivoTres.WriteLine(FormatoDeDataTres.ToString());
+            arquivoTres.Close();
         }
     }
 }

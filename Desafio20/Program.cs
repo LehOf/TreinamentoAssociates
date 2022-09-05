@@ -7,13 +7,17 @@ namespace Desafio20
     {
         static void Main(string[] args)
         {
-            Console.Write("Digite o caminho do arquivo:");
-            var SourcePath = Console.ReadLine();
+            Console.WriteLine("DIGITE O CAMINHO DO ARQUIVO: ");
+            var caminho = Console.ReadLine();
 
-            var arquivo = new Arquivo(SourcePath);
+            var arquivo = new Arquivo();
+            arquivo.LendoArquivo(caminho);
 
-           arquivo.ImprimirNoConsole();
+            arquivo.CriandoNovosArquivos();
 
+            Console.WriteLine(arquivo.FormatoDeDataUm);
+            Console.WriteLine(arquivo.FormatoDeDataDois);
+            Console.WriteLine(arquivo.FormatoDeDataTres);
         }
     }
 }
