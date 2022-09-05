@@ -57,7 +57,7 @@ namespace Desafio12
 
         public override string ToString()
         {
-            return $"\n{EncontrarMenorValorDoVetor(_numeroDeposicoes)} \nPosição: {EncontrarPosicaoMenorValor(_numeroDeposicoes)}";
+            return $"\n{EncontrarMenorValorDoVetor(_numeroDeposicoes)} \nPosição: {EncontrarMenorValorDoVetor(_numeroDeposicoes)}";
         }
     }
 }

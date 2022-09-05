@@ -4,39 +4,59 @@ namespace Desafio23
 {
     class Caracteres
     {
+        private string[] _frases { get; set; }
+        private int _maior { get; set; }
+        private int _caracter { get; set; }
+        private string _palavra { get; set; }
+
         public Caracteres()
         {
 
         }
+
+
         public void ContarCaracterPalavra()
         {
-            var contador = 0;
-            var tamanhoDaPalavra = 0;
-            string[] palavra;
 
-            while (true)
+            do
             {
-                Console.Write("DIGITE UMA FRASE: ");
-                palavra = Console.ReadLine().Split(' ');
-                tamanhoDaPalavra = palavra[contador].Length;
-                for(int i=0; i<palavra.Length; i++)
-                {
-                    Console.Write($"{tamanhoDaPalavra = palavra[contador].Length}- ");
-                    contador++;
-                }
-
-                contador++;
                 Console.WriteLine("");
+                Console.WriteLine("DIGITE UMA FRASE: ");
+                _frases = Console.ReadLine().Split(' ');
 
-                if (tamanhoDaPalavra == 0)
+                if (_frases[0] != "0")
                 {
-                    break;
+                    foreach (var frase in _frases)
+                    {
+                        if (frase.Length > 0)
+                        {
+                            _maior = frase.Length;
+                            _palavra = frase;
+                        }
+                        Console.Write($"{frase.Length}-");
+                    }
+
+                    for (int i = 0; i < _frases.Length; i++)
+                    {
+                        _caracter = _frases[i].Length;
+
+                        if (_caracter < _maior)
+                        {
+                            _maior = _maior;
+                            _palavra = _palavra;
+                        }
+                        else if (_caracter > _maior)
+                        {
+                            _maior = _caracter;
+                            _palavra = _frases[i];
+                        }
+                    }
                 }
-            }
-
-
+                else
+                {
+                    Console.WriteLine($"The biggest word: {_palavra}");
+                }
+            } while (_frases[0] != "0");
         }
-
-
     }
 }

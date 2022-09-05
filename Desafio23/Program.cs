@@ -7,9 +7,11 @@ namespace Desafio23
         static void Main(string[] args)
         {
 
-            var caracater = new Caracteres();
-            caracater.ContarCaracterPalavra();
+            var caracter = new Caracteres();
 
+            caracter.ContarCaracterPalavra();
         }
     }
 }
+
+
