@@ -28,7 +28,7 @@ namespace Desafio25
 
             for (int i = 0; i < notasQuantidades.Length; i++)
             {
-                if (notasQuantidades[i] != notasQuantidades[0])
+                if (notasQuantidades[i] != notasValores[0])
                 {
                     notasQuantidades[i] = _resto / notasValores[i];
                     _resto %= notasValores[i];
@@ -39,6 +39,7 @@ namespace Desafio25
                     _resto = _dinheiro % notasValores[i];
                 }
             }
+
             for (int i = 0; i < notasQuantidades.Length; i++)
             {
                 resultado += ($"{(int)notasQuantidades[i]} nota(s) de R$ {notasValores[i].ToString("F2", CultureInfo.InvariantCulture)}\n");
@@ -68,7 +69,7 @@ namespace Desafio25
             }
             for (int i = 0; i < moedasQuantidades.Length; i++)
             {
-                resultado += ($"{(int)moedasQuantidades[i]} nota(s) de R$ {moedasValores[i].ToString("F2", CultureInfo.InvariantCulture)}\n");
+                resultado += ($"{(int)moedasQuantidades[i]} moeda(s) de R$ {moedasValores[i].ToString("F2", CultureInfo.InvariantCulture)}\n");
             }
             return resultado;
         }
