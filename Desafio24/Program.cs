@@ -10,12 +10,8 @@ namespace Desafio24
             Console.Write("DIGITE A DIMENSÃO DO TABULEIRO EXEMPLO NxN:");
             var numeroDaDimensao = int.Parse(Console.ReadLine());
 
-            var tabuleiro = new Tabuleiro();
-            var exportar = new ExportandoConsole();
-
-            tabuleiro.TratarEntrada(numeroDaDimensao);
-
-            exportar.Exportando(tabuleiro, numeroDaDimensao);     
+            var exportandoConsole = new ExportandoConsole();
+            exportandoConsole.Exportando(new Tabuleiro(numeroDaDimensao));
         }
     }
 }

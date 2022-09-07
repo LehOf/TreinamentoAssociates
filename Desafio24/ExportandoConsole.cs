@@ -5,9 +5,9 @@ namespace Desafio24
 {
     class ExportandoConsole : IExportandoDados
     {
-        public string Exportando(Tabuleiro tabuleiro, int numeroDimensao)
+        public void Exportando(Tabuleiro tabuleiro)
         {
-           return (tabuleiro.TratarEntrada(numeroDimensao));
+            Console.WriteLine(tabuleiro.TratarEntrada());
         }
     }
 }
