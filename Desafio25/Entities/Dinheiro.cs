@@ -16,16 +16,8 @@ namespace Desafio25
 
         public void TratarExcecao()
         {
-            if (_dinheiro < 0 || _dinheiro > 1000000.00)
-            {
-                var error = new EntradaInvalidaException();
-                Console.WriteLine(error.Message);
-            }
-            else
-            {
-                Console.WriteLine(CalcularNotas());
-                Console.WriteLine(CalcularMoedas());
-            }
+            var error = new EntradaInvalidaException();
+            Console.WriteLine(error.Message);
         }
         public string CalcularNotas()
         {
@@ -45,9 +37,9 @@ namespace Desafio25
                 {
                     notasQuantidades[i] = _dinheiro / notasValores[i];
                     _resto = _dinheiro % notasValores[i];
-                }              
+                }
             }
-            for(int i=0; i<notasQuantidades.Length; i++)
+            for (int i = 0; i < notasQuantidades.Length; i++)
             {
                 resultado += ($"{(int)notasQuantidades[i]} nota(s) de R$ {notasValores[i].ToString("F2", CultureInfo.InvariantCulture)}\n");
             }
@@ -59,7 +51,7 @@ namespace Desafio25
             double[] moedasQuantidades = { 1.0, 0.50, 0.25, 0.10, 0.05, 0.01 };
 
             var resultado = "";
-            
+
             for (int i = 0; i < moedasQuantidades.Length; i++)
             {
                 if (moedasQuantidades[i] != moedasQuantidades[0])
@@ -72,7 +64,7 @@ namespace Desafio25
                     moedasQuantidades[i] = _resto / moedasValores[i];
                     _resto %= moedasValores[i];
                     _resto *= 100;
-                }  
+                }
             }
             for (int i = 0; i < moedasQuantidades.Length; i++)
             {
