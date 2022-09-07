@@ -18,6 +18,8 @@ namespace Desafio25
             double[] notasQuantidades = { 100.00, 50.00, 20.00, 10.00, 5.00, 2.00 };
             double[] notasValores = { 100.00, 50.00, 20.00, 10.00, 5.00, 2.00 };
 
+            Console.WriteLine("NOTAS: ");
+
             for (int i = 0; i < notasQuantidades.Length; i++)
             {
                 if (notasQuantidades[i] != notasQuantidades[0])
@@ -38,6 +40,8 @@ namespace Desafio25
         {
             double[] moedasValores = { 1.0, 0.50, 0.25, 0.10, 0.05, 0.01 };
             double[] moedasQuantidades = { 1.0, 0.50, 0.25, 0.10, 0.05, 0.01 };
+
+            Console.WriteLine("MOEDAS: ");
 
             for (int i = 0; i < moedasQuantidades.Length; i++)
             {
