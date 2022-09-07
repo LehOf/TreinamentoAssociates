@@ -11,10 +11,7 @@ namespace Desafio25
             var entradaDinheiro = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
             var dinheiro = new Dinheiro(entradaDinheiro);
-
-            dinheiro.CalcularNotas();
-            Console.WriteLine("");
-            dinheiro.CalcularMoedas();
+            dinheiro.TratarExcecao();
         }
     }
 }

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Globalization;
+using Desafio25.Exceptions;
 
 namespace Desafio25
 {
-    class Dinheiro
+    public class Dinheiro
     {
         private double _dinheiro { get; set; }
         private double _resto { get; set; }
@@ -13,12 +14,25 @@ namespace Desafio25
             _dinheiro = dinheiro;
         }
 
-        public void CalcularNotas()
+        public void TratarExcecao()
+        {
+            if (_dinheiro < 0 || _dinheiro > 1000000.00)
+            {
+                var error = new EntradaInvalidaException();
+                Console.WriteLine(error.Message);
+            }
+            else
+            {
+                Console.WriteLine(CalcularNotas());
+                Console.WriteLine(CalcularMoedas());
+            }
+        }
+        public string CalcularNotas()
         {
             double[] notasQuantidades = { 100.00, 50.00, 20.00, 10.00, 5.00, 2.00 };
             double[] notasValores = { 100.00, 50.00, 20.00, 10.00, 5.00, 2.00 };
 
-            Console.WriteLine("NOTAS: ");
+            var resultado = "";
 
             for (int i = 0; i < notasQuantidades.Length; i++)
             {
@@ -31,18 +45,21 @@ namespace Desafio25
                 {
                     notasQuantidades[i] = _dinheiro / notasValores[i];
                     _resto = _dinheiro % notasValores[i];
-                }
-                Console.WriteLine($"{(int)notasQuantidades[i]} nota(s) de R$ {notasValores[i].ToString("F2", CultureInfo.InvariantCulture)}");
+                }              
             }
+            for(int i=0; i<notasQuantidades.Length; i++)
+            {
+                resultado += ($"{(int)notasQuantidades[i]} nota(s) de R$ {notasValores[i].ToString("F2", CultureInfo.InvariantCulture)}\n");
+            }
+            return resultado;
         }
-
-        public void CalcularMoedas()
+        public string CalcularMoedas()
         {
             double[] moedasValores = { 1.0, 0.50, 0.25, 0.10, 0.05, 0.01 };
             double[] moedasQuantidades = { 1.0, 0.50, 0.25, 0.10, 0.05, 0.01 };
 
-            Console.WriteLine("MOEDAS: ");
-
+            var resultado = "";
+            
             for (int i = 0; i < moedasQuantidades.Length; i++)
             {
                 if (moedasQuantidades[i] != moedasQuantidades[0])
@@ -55,9 +72,13 @@ namespace Desafio25
                     moedasQuantidades[i] = _resto / moedasValores[i];
                     _resto %= moedasValores[i];
                     _resto *= 100;
-                }
-                Console.WriteLine($"{(int)moedasQuantidades[i]} nota(s) de R$ {moedasValores[i].ToString("F2", CultureInfo.InvariantCulture)}");
+                }  
             }
+            for (int i = 0; i < moedasQuantidades.Length; i++)
+            {
+                resultado += ($"{(int)moedasQuantidades[i]} nota(s) de R$ {moedasValores[i].ToString("F2", CultureInfo.InvariantCulture)}\n");
+            }
+            return resultado;
         }
     }
 }
