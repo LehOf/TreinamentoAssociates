@@ -6,18 +6,19 @@ namespace Desafio20
     class Arquivo
     {
         private readonly string _caminhoArquivo;
-        private string[] _datas { get; set; }
+        private string[] _datas;
 
         public Arquivo(string caminhoArquivo)
         {
             _caminhoArquivo = caminhoArquivo;
         }
 
-        public DateTime LendoArquivo()
+        private DateTime LerArquivo()
         {
             return DateTime.Parse(File.ReadAllLines(_caminhoArquivo)[0]);
         }
-        public string[] ConversaoDatas(DateTime data)
+
+        private string[] ConverterDatas(DateTime data)
         {
             return new string[]
             {
@@ -26,27 +27,17 @@ namespace Desafio20
                 data.ToString("dd-MM-yy")
             };
         }
-        public void GerarArquivos(string[] datas)
+
+        public void Converter()
         {
-            var contador = 0;
-
-            foreach(var data in datas)
-            {
-                contador++;
-
-                using (var rw = File.AppendText($"Aquivo_{contador}.txt"))
-                {
-                    rw.Write(data);
-                }
-            }
+            var data = LerArquivo();
+            _datas = ConverterDatas(data);
         }
 
-        public void GerarConsole(string[] datas)
+        public void ExportarDados(IExportarDados exportarDados)
         {
-            foreach(var data in datas)
-            {
-                Console.WriteLine(data);
-            }
+            exportarDados.Exportar(_datas);
         }
+
     }
 }
