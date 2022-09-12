@@ -6,11 +6,7 @@ namespace Desafio26
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("DIGITE UMA ENTRADA VÁLIDA: ");
-            string[] equacao = Console.ReadLine().ToUpper().Split('+', '=');
-
-            var incognita = new Incognita(equacao);
-
+            var incognita = new Incognita();
             incognita.CalcularEquacao();
         }
     }
